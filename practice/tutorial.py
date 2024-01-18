@@ -55,24 +55,62 @@
   # input() 으로 입력받은 숫자는 숫자형으로 바꿔줘야한다.
   # int(input('수학점수는?'))
 
-mathScore = int(input('수학점수는?'))
-scienceScore = int(input('과학점수는?'))
-studentIsPass = True
+# mathScore = int(input('수학점수는?'))
+# scienceScore = int(input('과학점수는?'))
+# studentIsPass = True
 
-if mathScore + scienceScore > 100:
-  studentIsPass = True
-else:
-  studentIsPass = False
+# if mathScore + scienceScore > 100:
+#   studentIsPass = True
+# else:
+#   studentIsPass = False
 
-if studentIsPass == True:
-  print('합격')
-else :
-  print('불합격')
+# if studentIsPass == True:
+#   print('합격')
+# else :
+#   print('불합격')
 
 # 3. 시퀀스형
   # - 문자열형 '물','아이유','안녕하세요','HELLO' 
 
-score = 0
-str(score)
-print(score)
+# score = 0
+# str(score)
+# print(score)
 # '0'
+
+
+# 04.출력
+# sep 각 출력 값 사이에 들어가는 것을 정의
+# end 출력의 마지막에 end로 정의한 값이 붙어서 출력
+
+print(1,2,3)
+# 1 2 3
+
+print(1,2,3, sep='')
+# 123
+
+print(1,2,3, sep='&')
+# 1&2&3
+
+print(1,2,3)
+print(4,5,6)
+# 1 2 3
+# 4 5 6
+
+print(1,2,3,end='')
+print(4,5,6)
+#1 2 34 5 6
+
+# 포맷형 문자열 출력
+month = '1월'
+day = '24일'
+
+print('Today is', month,day)
+print('Today is %s %s' %(month,day))
+
+month = 1
+day = 24
+print('Today is %d월 %d일' %(month,day))
+
+month = 1
+day = 24.0
+print('Today is %f월 %f일' %(month,day))
