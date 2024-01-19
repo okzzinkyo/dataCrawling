@@ -78,6 +78,7 @@
 # '0'
 
 
+
 # 04.출력
 # sep 각 출력 값 사이에 들어가는 것을 정의
 # end 출력의 마지막에 end로 정의한 값이 붙어서 출력
@@ -114,3 +115,37 @@ print('Today is %d월 %d일' %(month,day))
 month = 1
 day = 24.0
 print('Today is %f월 %f일' %(month,day))
+
+
+
+# 05. 숫자형
+
+# 제곱(**)
+
+# 2*3
+# 8
+
+# (2**3)**2
+# 64
+
+count = 1
+count = count + 1
+count += 1
+count -= 1
+count *= 1
+count /= 1
+count %= 1
+count //= 1
+
+## pow(x,y) - 제곱함수
+pow(2,3)  # 8
+
+# abs(x) - 절대값 함수
+abs(3)  # 3
+abs(-3) # 3
+
+# round(x) - 반올림 함수
+round(3.66) # 4
+round(3.24) # 3
+round(3.225,1)  # 3.3 - 소수점 1의 자리에서 반올림
+round(3.225,2)  # 3.25 - 소수점 2의 자리에서 반올림
