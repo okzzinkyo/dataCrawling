@@ -242,3 +242,45 @@ word[:3]
 
 word[5:]
 # 5부터 끝까지
+
+
+
+# 07. 조건문 과 부울형
+
+# 1층에는 프론트를 넣고
+# 2층에는 매점을 넣고
+# 3층에는 피씨방을 넣고
+# 4층 위는 주거집을 넣는다.
+
+floor =  int(input('몇 층이냐? '))
+
+if floor == 1:
+  print('프론트 설치')
+elif floor ==2 :
+  print('매점 설치')
+elif floor ==3 :
+  print('피씨방 설치')
+else:
+  print('주거집 설치')
+
+# if 조건1:
+#   실행1
+# elif 조건2:
+#   실행2
+# else: (조건1도 조건2도 아닌 그 외)
+#   실행3
+
+floor =  int(input('몇 층이냐? '))
+apt = input('누구꺼? ')
+
+if floor == 1 and apt == 'mine' :
+  # and >> A 와 B 동시 만족
+  # floor가 1층이고, 내꺼일때 실행
+  print('프론트 설치')
+elif floor == 2 or apt == 'mine':
+  # or >> A 또는 B 만족
+  # floor가 2층이거나 내꺼일 때 실행
+  print('매점 설치')
+else :
+  print('주거지')
+
