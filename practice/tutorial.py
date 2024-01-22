@@ -149,3 +149,96 @@ round(3.66) # 4
 round(3.24) # 3
 round(3.225,1)  # 3.3 - 소수점 1의 자리에서 반올림
 round(3.225,2)  # 3.25 - 소수점 2의 자리에서 반올림
+
+
+
+# 06.문자열형
+
+# "" 따옴표 출력
+# 아이유가 말했다. "안녕하세요"
+print('아이유가 말했다. "안녕하세요."')
+print("아이유가 말했다.'안녕하세요.'")
+
+# ''' 작은 따옴표 세개는 줄바꿈, "" 도 출력 가능하다.
+# 아이유가 말했다
+# "안녕하세요"
+print('''아이유가 말했다.
+      "안녕하세요"''')
+
+word1 = '아이유'
+word2 = '공유'
+
+# 문자열 연산(더하기,곱하기)
+print(word1+word2)
+  # 아이유공유
+print(word1*5)
+  # 아이유아이유아이유아이유아이유
+
+
+# 문자열에 해당 문자열이 존재하는지 아닌지 확인
+# 결과는 True False로 출력됨
+sentence = '장원영 안유진 리즈 가을 레이 이서'
+
+'장원영' in sentence
+# True
+'장원영' not in sentence
+# False
+
+#문자열 대/소문자 변환
+ 
+word = 'apple'
+word.upper()
+# APPLE
+
+word2 = 'BANANA'
+word.lower()
+# banana
+
+# upper/lower함수는 값 자체를 대/소문자로 바꾸는것은 아니다.
+
+print(word)
+# apple 
+
+# 변환 값을 변수에 저장하고 싶다면 결과 값을 재할당한다.
+word = word.upper()
+
+print(word)
+# APPLE
+
+# 문자열 INDEX
+# 문자에는 순서가 있어 특정 위치의 문자를 확인할 수 있다.
+# 0부터 시작
+word = 'samsungapple'
+
+word[0]
+# s
+
+word[1]
+# a
+
+# 문자열 길이
+len(word)
+# 12
+
+word[11]
+# e
+
+# 뒤에서 부터 count
+word[-1]
+# e
+
+word[-2]
+# l
+
+# word[시작:하나 앞에서 종료]
+word[0:2]
+# sa
+
+word[3:6]
+# sun
+
+word[:3]
+# 0부터 2까지
+
+word[5:]
+# 5부터 끝까지
