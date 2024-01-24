@@ -284,3 +284,65 @@ elif floor == 2 or apt == 'mine':
 else :
   print('주거지')
 
+
+
+# 08.반복문
+floor = 1
+
+while floor < 10:
+  print('%d층 청소' %floor)
+  # floor = floor + 1
+  floor += floor
+
+print('끝!')
+
+# 1층 청소
+# 2층 청소
+# 3층 청소
+# 4층 청소
+# 5층 청소
+# 6층 청소
+# 7층 청소
+# 8층 청소
+# 9층 청소
+# 끝!
+
+for i in 'Hello':
+  print(i)
+
+print('끝!')
+
+# H
+# e
+# l
+# l
+# o
+# 끝
+
+floor = 1
+
+while True:
+  print('청소')
+  floor +=1
+  if(floor > 5):
+    break # 가장 가까운 반목문을 끝낸다
+
+print(floor)
+
+# 청소 ..floor = 2
+# 청소 ..floor = 3
+# 청소 ..floor = 4
+# 청소 ..floor = 5
+# 청소 .. break
+
+floor = 1
+while floor < 10 :
+  floor += 1
+  if floor % 2 == 0:
+    continue # 반복문의 시작으로 돌아간다.
+  print('%d층' %floor)
+
+# 3층
+# 5층
+# 7층
+# 9층
