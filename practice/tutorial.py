@@ -287,8 +287,9 @@ else :
 
 
 # 08.반복문
-floor = 1
 
+# while문
+floor = 1
 while floor < 10:
   print('%d층 청소' %floor)
   # floor = floor + 1
@@ -307,6 +308,7 @@ print('끝!')
 # 9층 청소
 # 끝!
 
+# for문
 for i in 'Hello':
   print(i)
 
@@ -319,13 +321,13 @@ print('끝!')
 # o
 # 끝
 
+# 반복문 - break
 floor = 1
-
 while True:
   print('청소')
   floor +=1
   if(floor > 5):
-    break # 가장 가까운 반목문을 끝낸다
+    break # 가장 가까운 반복문을 끝낸다
 
 print(floor)
 
@@ -335,6 +337,7 @@ print(floor)
 # 청소 ..floor = 5
 # 청소 .. break
 
+# 반복문 - continue
 floor = 1
 while floor < 10 :
   floor += 1
@@ -346,3 +349,86 @@ while floor < 10 :
 # 5층
 # 7층
 # 9층
+  
+
+
+# 09.리스트형
+students = ['옥진경', '아이유', '공유', '뷔', '정한']
+print(students)
+
+score = [100,90,50,40,100]
+print(score)
+
+price=['과자', 1000, '음료수', 3000]
+print(price)
+
+studentInfo = [students,score]
+print(studentInfo)
+
+# 리스트 - for문에 사용 가능
+for i in students:
+  print(i)
+
+for i in score:
+  print(i)
+
+# range() - for문에 사용 가능
+# range(시작값,끝값+1,커지는 값)
+  
+range(1,10,1)
+# range(1,10)
+
+list(range(1,10,1))
+# [1,2,3,4,5,6,7,8,9]
+
+list(range(1,100,11))
+# [0,10,20,30,40,50,60,70,90]
+
+for i in range(1,10,1):
+  print(i)
+# 1
+# 2
+# 3
+# 4
+# 5
+# 6
+# 7
+# 8
+# 9
+
+# 시작값이 없을 경우 0부터 시작!
+for i in range(10):
+  print(i)
+# 0
+# 1
+# 2
+# 3
+# 4
+# 5
+# 6
+# 7
+# 8
+# 9
+  
+
+# while문과 for문 - range()의 결과가 동일함
+floor = 1
+while floor < 10:
+  print('%d층 청소' %floor)
+  floor += floor
+
+for i in range(1,10):
+  print('%d층 청소' %i)
+
+# list() - 형변환 
+word = 'hellow'
+temp = list(word)
+print(temp)
+# ['h','e','l','l','o','w']
+
+# 리스트도 index(순서)를 이용해서 원하는 정보 추출 가능
+score = [1,10,3,5,7,19]
+print(score[0])
+# 1
+print(score[3:5])
+# [5,7]
