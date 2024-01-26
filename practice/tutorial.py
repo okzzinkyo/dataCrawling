@@ -533,3 +533,95 @@ a=[7,6,56,4,3,12]
 a.reverse()
 # [12,3,4,56,6,7]
 
+
+
+# 11. 컴퓨팅 사고
+# 컴파일 언어(C언어) - 내부 속도 빠름,
+# 인터프린터 언어(python) - 수정이 용이, 컴퓨터 언어로 변환하는 작업이 필요
+# if, while, for문을 통해 동작한다
+# 알고리즘 - 일련의 과정을 따르는 것
+
+
+
+# 12.함수
+# 반복적으로 재사용할 수 있게 만들어 놓은 코드
+
+def f(x):
+  return print(x)
+
+f('hello')
+f('Jinkyung ock')
+f('Yeah~!')
+
+# hello
+# Jinkyung ock
+# Yeah~!
+
+def add(x):
+  x += 5
+  return x
+
+print(add(4))
+print(add(6))
+print(add(9))
+
+# 9
+# 11
+# 14
+
+a = 1  # 전역변수
+def increase(a):
+  a += 1 # 지역변수
+  return a
+b= increase(a)
+
+print(b)
+# 2
+print(a)
+# 1
+
+
+# 변수를 복사해서 함수로 전달한다.
+# 하지만, 리스트를 전달할 때는 리스트가 있는 좌표를 전달하기 때문에
+# 함수 안에서 리스트를 조작할 경우 전역 변수에 선언된 리스트 값도 변한다.
+a = 1
+def increase(n):
+  n+=1
+  return n
+
+def inc_list(l): # [1,2,3]
+  for i in range(len(l)): # for i in range(3) == range(0,3,1) == [0,1,2]
+    l[i] +=1 # i==0, l[0] = l[0] + 1
+  return l # [2,3,4]
+
+b = increase(a) 
+l1 = [1,2,3]
+l2 = inc_list(l1) # [2,3,4]
+
+print(a,b,l1,l2) 
+# 1 2 [2,3,4] [2,3,4]
+
+
+# 갯수 상관없이 변수를 받고자 할때
+# 파라미터명 앞에 *(별표) 표시를 한다.
+def sum_many(*a):
+  sum = 0
+  for i in a:
+    sum += i
+  return sum
+  
+print(sum_many(1))
+print(sum_many(1,2))
+print(sum_many(1,2,3,4))
+print(sum_many(1,2,3,4,5))
+
+
+# 함수의 파라미터에 기본값을 선언하여
+# 어떤 인자도 받지 않았을 때 사용된다.
+def print_id(num=100, name='홍길동'):
+  print(num,name)
+
+print_id()
+# 100 홍길동
+print_id(200,'CT')
+# 200 CT
