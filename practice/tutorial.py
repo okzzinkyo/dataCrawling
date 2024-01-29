@@ -625,3 +625,130 @@ print_id()
 # 100 홍길동
 print_id(200,'CT')
 # 200 CT
+
+
+
+#  클래스
+#  거푸집처럼 여러 개의 객체를 만들어 낼 수 있는 틀
+class MyPos:
+  x=0
+  y=0
+
+def add_pos(pos,x,y):
+  pos.x += x
+  pos.y += y
+
+def mul_pos(pos,n):
+  pos.x *=n
+  pos.y *=n
+
+a = MyPos()
+a.x = 100
+a.y = 50
+print('a= %d,%d' %(a.x,a.y))
+# a=100,50
+
+b = MyPos()
+b.x = 30
+b.y = 30
+print('b= %d,%d' %(b.x,b.y))
+# b=30,30
+
+add_pos(a,b.x,b.y)
+print('a= %d,%d' %(a.x,a.y))
+# a=130,80
+
+mul_pos(a,3)
+print('a= %d,%d' %(a.x,a.y))
+# a=390,240
+
+
+# 클래스 안에 함수도 작성 가능
+class MyPos:
+  x=0
+  y=0
+
+  # self : 나 자신
+  def add(self,pos2):
+    self.x += pos2.x
+    self.y += pos2.y
+
+  def mul(self,n):
+    self.x *=n
+    self.y *=n
+
+a = MyPos()
+a.x = 100
+a.y = 50
+print('a= %d,%d' %(a.x,a.y))
+
+b = MyPos()
+b.x = 30
+b.y = 30
+print('b= %d,%d' %(b.x,b.y))
+
+a.add(b)
+print('a= %d,%d' %(a.x,a.y))
+# a = 130,80
+
+a.mul(3)
+print('a= %d,%d' %(a.x,a.y))
+# a = 390,240
+
+
+# init 생성자
+# 클래스를 생성할 때 바로 실행되는 클래스 내 함수
+class MyPos:
+  x=0
+  y=0
+
+  # 생성자
+  def __init__(self,x,y):
+    self.x =x
+    self.y = y
+
+  def add(self,pos2):
+    self.x += pos2.x
+    self.y += pos2.y
+
+  def mul(self,n):
+    self.x *=n
+    self.y *=n
+
+a = MyPos(100,50)
+b = MyPos(30,30)
+
+a.add(b)
+print('a= %d,%d' %(a.x,a.y))
+# a = 130,80
+
+a.mul(3)
+print('a= %d,%d' %(a.x,a.y))
+# a = 390,240
+
+# __add__ print()안에 '+'를
+# __mul__ print()안에 '*'를
+# __str__ print()안에 클래스를 선언하면 해당 함수가 실행된다.
+class MyPos:
+  x=0
+  y=0
+
+  def __init__(self,x,y):
+    self.x =x
+    self.y = y
+
+  def __add__(self,other):
+    return MyPos(self.x + other.x, self.y + other.y)
+  
+  def __mul__(self,other):
+    return MyPos(self.x*other, self.y*other)
+
+  def __str__(self):
+    return '(%03d, %03d)'%(self.x,self.y)
+
+a = MyPos(100,50)
+print('a=',a)
+b = MyPos(30,30)
+print('b=',b)
+print('a+b=',a+b)
+print('a*3=',a*3)
