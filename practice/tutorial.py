@@ -752,3 +752,19 @@ b = MyPos(30,30)
 print('b=',b)
 print('a+b=',a+b)
 print('a*3=',a*3)
+
+
+
+# 14.튜플
+# 소괄호()로 표기하며, 리스트와 달리 원소를 변경할 수 없다.
+# +,* 연산은 동일하게 적용가능
+# list 로 형변환을 하면 원소를 변경할 수 있다.
+prime = (2,3,5,7,11)
+name = ('Kim','Lee','Park')
+mixed = ('Ko',49,[2,3,7])
+
+rlist = [0,1,2]
+rlist[0] = 3
+print(rlist) # [3,1,2]
+
+# name[0] = 'Cha' # error
