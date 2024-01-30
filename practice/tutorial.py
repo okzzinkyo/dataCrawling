@@ -768,3 +768,73 @@ rlist[0] = 3
 print(rlist) # [3,1,2]
 
 # name[0] = 'Cha' # error
+
+
+
+# 15. 집합형
+# 중괄호{}로 표기하며, 중복된 원소는 추가할 수 없다.
+# rest={} type(rest) => <class'dict'> 사전형으로 인식한다.
+# set() 으로 빈 집합형을 생성할 수 있다.
+
+# 순서가 존재하지 않는다.
+name = ['Kim','Lee','Park']
+# ['Kim','Lee','Park']
+nameset = {'Kim','Lee','Park'}
+# {'Park','Kim','Lee'}  error:: nameset[0] X
+
+# 집합의 원소는 변경이 불가능한 값으로 구성되어야한다.(hashable)
+newset={1,3,[5,7],9} 
+# error:: [5,7] unhashable한 값이므로 집합의 원소가 될 수 없다.
+
+#** hashable(unmutable)
+# hash가 가능하다.(변경이 불가능하다.)
+# 비교 가능 >> 변하지 않아 컴퓨터의 기준으로 사용할 수 있기 때문
+# 문자열, 숫자, 튜플
+
+#** unhashable(mutable)
+# hash가 불가능하다.(변경이 가능하다.)
+# 비교 불가능
+# 리스트, 집합, 사전형
+
+# set 형변환
+list1 = [1,2,3,1,3,5]
+set1 = set(list1)
+# {1,2,3,5}
+
+tuple2 = (10,20,30,40,10)
+set2 = set(tuple2)
+# {10,20,30,40}
+
+set3 = set('hello')
+# {'h','l','e','o'}
+nset = set() # 빈 집합형
+
+# dir(set)
+# 집합향 관련 함수 확인 가능
+
+nset.add(1)
+# {1}
+nset.add(2)
+# {1,2}
+nset.update([3,4])
+# {1,2,3,4}
+nset.remove(2)
+# {1,3,4}
+
+odd={1,3,5,7,9}
+prime={2,3,5,7}
+
+# 교집합
+odd.intersection(prime)
+odd&prime
+# {3,5,7}
+
+# 합집합
+odd.union(prime)
+odd | prime
+# {1,2,3,5,7,9}
+
+#차집합
+odd.difference(prime)
+odd - prime
+# {1,9}
