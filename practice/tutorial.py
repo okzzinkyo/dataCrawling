@@ -838,3 +838,81 @@ odd | prime
 odd.difference(prime)
 odd - prime
 # {1,9}
+
+
+
+# 16.사전형
+# key:value로 구성
+myDiction = {
+  '김밥':'3000원',
+  '라면':'5000원',
+  '김치':'10000원',
+}
+myDiction['김치']
+# 10000원
+
+price1 = {'커피':'3000원', '우유':'2000원', 7:1004}
+price1['커피']
+# 3000원
+price1[7]
+# 10004
+
+# 값을 변경가능하다.
+price1[7] = '천사'
+price1[7]
+# 천사
+
+# 비교가 불가능한 값만 key값으로 받을 수 있다. (hashable)
+# 문자형, 숫자, 튜플은 사전형의 key값으로 사용가능.
+price2 = {('라면','김밥'):'5000원', '우유':'2000원'}
+
+# error
+# - 리스트는 unhashable 해서 변경과 비교가 가능하기 때문에 key로 사용 불가능하다.
+price2 = {['라면','김밥']:'5000원', '우유':'2000원'} 
+
+number = {'1':'one','2':'two','3':'three'}
+
+# key,value 추가
+number[4] = 'four'
+print(number)
+# {'1':'one','2':'two','3':'three','4':'four'}
+
+# key,value 삭제
+del number[4]
+print(number)
+# {'1':'one','2':'two','3':'three'}
+
+# for문 사전형의 key값으로 value 확인 가능
+for i in number:
+  print(number[i])
+
+# 사전형 원소 갯수
+print(len(number))
+
+# 사전형 관련 함수
+dir(dict)
+
+number = {'1':'one','2':'two','3':'three','4':'four'}
+
+number.pop(1)
+# one
+print(number)
+# {'2':'two','3':'three','4':'four'}
+
+number.update({6:'six'})
+print(number)
+# {'2':'two','3':'three','4':'four','6':'six'}
+
+# 여러개의 key-value도 update가능
+number.update({6:'six', 7:'seven'})
+
+info={'name':'Lee', 'height':'163', 'blood type': 'B'}
+info.keys()
+# dict_keys(['name','height','blood type'])
+list(info.keys())
+# ['name','height','blood type']
+info.values()
+# dict_values(['Lee','163','B'])
+info.items()
+# dict_items([('name','Lee'),('height':,'163'),('blood type','B')])
+# 이때 출력되는 item리스트의 원소는 변경 불가능한 튜블이다.
