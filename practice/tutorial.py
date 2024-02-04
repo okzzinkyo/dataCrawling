@@ -916,3 +916,20 @@ info.values()
 info.items()
 # dict_items([('name','Lee'),('height':,'163'),('blood type','B')])
 # 이때 출력되는 item리스트의 원소는 변경 불가능한 튜블이다.
+
+
+
+# 람다
+a = lambda x: x + 1
+a(4)
+# 5
+
+b = lambda x, y: x*y
+b(3,4)
+# 12
+
+list(map(lambda x : x**2), range(5))
+# [0,1,4,9,16]
+
+list(filter(lambda x:x <5), range(10))
+# [0,1,2,3,4]
